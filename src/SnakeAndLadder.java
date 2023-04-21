@@ -14,7 +14,7 @@ public class SnakeAndLadder {
          */
 
         // using while loop till position is less than 100
-        while (playerPosition < 100){
+            while (playerPosition < 100){
             // storing value of random to roll
             int roll= random.nextInt(6)+1;
             System.out.println("you rolled a "+roll);
@@ -26,20 +26,24 @@ public class SnakeAndLadder {
             // UC 3 Check for option
             int option = random.nextInt(3);
             switch (option) {
-                case 0:
+                    case 0:
                     System.out.println("Your position stays the same");
                     break;
-                case 1:
+                    case 1:
                     int ladder = random.nextInt(100 - playerPosition) + 1;
                     playerPosition += ladder;
                     System.out.println("You climbed a ladder  Your new position is " + playerPosition);
                     break;
-                case 2:
+                    case 2:
                     int snake = random.nextInt(playerPosition) + 1;
                     playerPosition -= snake;
                     System.out.println("You got swallowed by a snake Your new position is " + playerPosition);
                     break;
             }
+
+                     if (playerPosition < 0) {
+                     playerPosition = 0;
+                }
 
         }
 
